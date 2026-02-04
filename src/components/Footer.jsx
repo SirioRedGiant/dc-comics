@@ -9,21 +9,26 @@ export default function Footer() {
   return <footer>
     <div className="bg-primary py-5">
       <div className="container d-flex justify-content-around align-items-center">
-        <div className="d-flex align-items-center text-white">
+        <figure className="d-flex align-items-center text-white">
           <img src={digitalComicsIcon} alt="DIGITAL COMICS ICON" />
-        </div>
-        <div className="d-flex align-items-center text-white">
+          <figcaption>DIGITAL COMICS</figcaption>
+        </figure>
+        <figure className="d-flex align-items-center text-white">
           <img src={merchandiseIcon} alt="DIGITAL COMICS ICON" />
-        </div>
-        <div className="d-flex align-items-center text-white">
+          <figcaption>DC MERCHANDISE</figcaption>
+        </figure>
+        <figure className="d-flex align-items-center text-white">
           <img src={subscriptionIcon} alt="DIGITAL COMICS ICON" />
-        </div>
-        <div className="d-flex align-items-center text-white">
+          <figcaption>SUBSCRIPTION</figcaption>
+        </figure>
+        <figure className="d-flex align-items-center text-white">
           <img src={comicShopLocator} alt="DIGITAL COMICS ICON" />
-        </div>
-        <div className="d-flex align-items-center text-white">
+          <figcaption>COMIC SHOP LOCATOR</figcaption>
+        </figure>
+        <figure className="d-flex align-items-center text-white">
           <img src={dcPowerVisa} alt="DIGITAL COMICS ICON" />
-        </div>
+          <figcaption>DC POWER VISA</figcaption>
+        </figure>
       </div>
     </div>
   </footer>;
