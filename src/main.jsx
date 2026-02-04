@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-// Import Bootstrap
-import "node_modules/bootstrap/dist/css/bootstrap.min.css";
-import * as bootstrap from "bootstrap";
+// Import Bootstrap  
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 // Import Open Sans => Font utilizzato
 
