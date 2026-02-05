@@ -1,6 +1,59 @@
 import dcLogo from "../assets/img/dc-logo.png";
 
 export default function Header() {
+  const navLinks = [
+    {
+      url: "#",
+      text: "CHARACTERS",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "COMICS",
+      isActive: true,
+    },
+    {
+      url: "#",
+      text: "MOVIES",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "TV",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "GAMES",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "COLLECTIBLES",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "VIDEOS",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "FANS",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "NEWS",
+      isActive: false,
+    },
+    {
+      url: "#",
+      text: "SHOP",
+      isActive: false,
+    },
+  ];
+
   return (
     <header className="bg-white">
       <div className="container d-flex justify-content-between align-items-center">
@@ -9,17 +62,13 @@ export default function Header() {
         </div>
         <nav>
           <ul className="d-flex list-unstyled m-0 gap-3 fw-bold">
-            <li>CHARACTERS</li>
-            <li>COMICS</li>
-            <li>MOVIES</li>
-            <li>TV</li>
-            <li>GAMES</li>
-            <li>COLLECTIBLES</li>
-            <li>VIDEOS</li>
-            <li>FANS</li>
-            <li>NEWS</li>
-            <li>SHOP</li>
-          </ul>
+            {navLinks.map((navLink, index) => (              
+              <li key={index}>
+                <a href={navLink.url} className={`text-decoration-none ${navLink.isActive ? "text-primary border-bottom border-primary" : "text-dark"}`}>{navLink.text}
+                </a>
+              </li>
+            ))}
+          </ul>          
         </nav>
       </div>
     </header>
