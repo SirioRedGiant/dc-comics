@@ -117,16 +117,17 @@ export default function Footer() {
           </div>
         </div>
       </section>
+      {/*//todo  PIè DI PAGINA --> SOCIAL*/}
       <section className="bg-dark py-4 border-top border-secondary">
         <div className="container d-flex justify-content-between align-items-center">
-          <button className="btn btn-outline-primary text-white border-2 fw-bold text-uppercase">Sign-up now!</button>
+          <a href="#" className="btn btn-outline-primary text-white border-2 fw-bold text-uppercase">Sign-up now!</a>
           <div className="d-flex align-items-center">
              <span className="text-primary fw-bold me-3 text-uppercase">Follow Us</span>
-             <img src={facebookLink} alt="link a facebook" />
-             <img src={twitterLink} alt="link a twitter" />
-             <img src={youtubeLink} alt="link a youtube" />
-             <img src={pinterestLink} alt="link a periscope" />
-             <img src={periscopeLink} alt="link a periscope" />
+             {socialLinks.map((socialLink, index) => (
+              <a key={index} href={socialLink.url} className="ms-4">
+                <img src={socialLink.img} alt={`Social ${index}`} />
+              </a>
+             ))};
           </div>
         </div>
       </section>
