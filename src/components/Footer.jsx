@@ -138,7 +138,9 @@ export default function Footer() {
                 <ul className="list-unstyled small text-secondary">
                   {heroSection.texts.map((text, index) => (
                     <li key={index}>
-                      <a href="#">{text}</a>
+                      <a href="#" className="text-reset text-decoration-none">
+                        {text}
+                      </a>
                     </li>
                   ))}
                 </ul>
