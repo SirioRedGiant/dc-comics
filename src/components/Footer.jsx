@@ -14,33 +14,70 @@ import periscopeLink from "../assets/img/footer-periscope.png"
 
 
 export default function Footer() {
+  //? DATI --> fascia blu
+  const infoBuyLinks = [
+    {
+      img : digitalComicsIcon,
+      text : "DIGITAL COMICS",
+      url : "#",
+    },
+    {
+      img : merchandiseIcon,
+      text : "DC MERCHANDISE",
+      url : "#",
+    },{
+      img : subscriptionIcon,
+      text : "SUBSCRIPTION",
+      url : "#",
+    },{
+      img : comicShopLocator,
+      text : "COMIC SHOP LOCATOR",
+      url : "#",
+    },{
+      img : dcPowerVisa,
+      text : "DC POWER VISA",
+      url : "#",
+    },
+  ];
+
+  //* DATI piè pagina social
+  const socialLinks = [
+    {      
+      img : facebookLink,
+      url : "#", 
+    },
+    {      
+      img : twitterLink,
+      url : "#", 
+    },
+    {      
+      img : youtubeLink,
+      url : "#", 
+    },
+    {      
+      img : pinterestLink,
+      url : "#", 
+    },
+    {      
+      img : periscopeLink,
+      url : "#", 
+    },
+  ];
+
   return (
     <footer>
+      {/*//? FASCIA BLU */}
       <div className="bg-primary py-5">
-        <div className="container d-flex justify-content-around align-items-center">
-          <figure className="d-flex align-items-center text-white">
-            <img src={digitalComicsIcon} alt="DIGITAL COMICS ICON" />
-            <figcaption>DIGITAL COMICS</figcaption>
-          </figure>
-          <figure className="d-flex align-items-center text-white">
-            <img src={merchandiseIcon} alt="DIGITAL COMICS ICON" />
-            <figcaption>DC MERCHANDISE</figcaption>
-          </figure>
-          <figure className="d-flex align-items-center text-white">
-            <img src={subscriptionIcon} alt="DIGITAL COMICS ICON" />
-            <figcaption>SUBSCRIPTION</figcaption>
-          </figure>
-          <figure className="d-flex align-items-center text-white">
-            <img src={comicShopLocator} alt="DIGITAL COMICS ICON" />
-            <figcaption>COMIC SHOP LOCATOR</figcaption>
-          </figure>
-          <figure className="d-flex align-items-center text-white">
-            <img src={dcPowerVisa} alt="DIGITAL COMICS ICON" />
-            <figcaption>DC POWER VISA</figcaption>
-          </figure>
+        <div className="container d-flex justify-content-around align-items-center flex-wrap">
+          {infoBuyLinks.map((infoBuyLink, index) => (
+            <a key={index} href={infoBuyLink.url} className="text-white text-decoration-none d-flex align-items-center">
+              <img src={infoBuyLink.img} alt={infoBuyLink.text} style={{ height: "50px" }} />
+              <span className="ms-2 fw-bold ">{infoBuyLink.text}</span>
+            </a>
+          ))}
         </div>
       </div>
-      {/* LINK FASCIA GRIGIA */}
+      {/*//^  FASCIA GRIGIA */}
       <section className="hero-footer bg-dark py-5 text-white overflow-hidden">
         <div className="container">
           <div className="row">
