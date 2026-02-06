@@ -1,3 +1,5 @@
+import ComicCard from "./comicCard";
+
 export default function Main({ comics }) {
   return (
     <>
@@ -9,25 +11,16 @@ export default function Main({ comics }) {
         <button className="btn btn-primary fw-bold current-series-button">
           CURRENT SERIES
         </button>
-
         <section className="bg-dark py-5">
           <div className="container">
             <div className="row g-4">
+              {/*//note  ComicCard */}
               {comics.map((comic) => (
-                <div key={comic.id} className="col-12 col-md-4 col-lg-2">
-                  <div className="comic-card text-white">
-                    <div className="img-container mb-3">
-                      <img
-                        src={comic.thumb}
-                        alt={comic.series}
-                        className="img-fluid w-100"
-                      />
-                    </div>
-                    <span className="text-uppercase small fw-bold">
-                      {comic.series}
-                    </span>
-                  </div>
-                </div>
+                <ComicCard
+                  key={comic.id}
+                  thumb={comic.thumb}
+                  series={comic.series}
+                />
               ))}
             </div>
           </div>
