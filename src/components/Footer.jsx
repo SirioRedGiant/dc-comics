@@ -142,7 +142,7 @@ export default function Footer() {
           <div className="row">
             {/* Colonne Link */}
             {heroSections.map((heroSection, index) => (
-              <div className="col-12 col-md-6 col-lg-2">
+              <div key={index} className="col-12 col-md-6 col-lg-2">
                 <h5 className="fw-bold text-uppercase">{heroSection.title}</h5>
 
                 <ul className="list-unstyled small text-secondary">
@@ -177,7 +177,6 @@ export default function Footer() {
                 <img src={socialLink.img} alt={`Social ${index}`} />
               </a>
             ))}
-            ;
           </div>
         </div>
       </section>
