@@ -1,6 +1,6 @@
 import dcLogo from "../assets/img/dc-logo.png";
 
-export default function Header() {
+export default function Header(headLogoImg) {
   const navLinks = [
     {
       url: "#",
@@ -58,7 +58,7 @@ export default function Header() {
     <header className="bg-white">
       <div className="container d-flex justify-content-between align-items-center">
         <div className="logo-container">
-          <img src={dcLogo} alt="DC logo" />
+          <img src={headLogoImg} alt="DC logo" />
         </div>
         <nav>
           <ul className="d-flex flex-wrap list-unstyled m-0 gap-3 fw-bold">

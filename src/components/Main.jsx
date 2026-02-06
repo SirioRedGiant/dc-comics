@@ -3,9 +3,6 @@ import ComicCard from "./comicCard";
 export default function Main({ comics }) {
   return (
     <>
-      <div className="jumbotron-hardcoded">
-        <img src="/img/jumbotron.jpg" alt="jumbotron" />
-      </div>
       {/* contenitore per poter gestire la posizione relativa */}
       <div className="position-relative">
         <button className="btn btn-primary fw-bold current-series-button">
