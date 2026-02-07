@@ -4,7 +4,7 @@ import dcLogoBackground from "../assets/img/dc-logo-bg.png";
 
 import { infoBuyLinks, heroSections, socialLinks } from "../data/footerlinks";
 
-const buyGoods = ({ img, text, url }) => {
+const BuyGoods = ({ img, text, url }) => {
   return (
     <a
       href={url}
@@ -17,7 +17,7 @@ const buyGoods = ({ img, text, url }) => {
 };
 
 //note ricorda che texts è un array di stringhe
-const heroLinkColumn = ({ title, texts }) => {
+const HeroLinkColumn = ({ title, texts }) => {
   return (
     <div className="col-12 col-md-6 col-lg-2">
       <h5 className="fw-bold">{title}</h5>
@@ -33,6 +33,15 @@ const heroLinkColumn = ({ title, texts }) => {
     </div>
   );
 };
+
+const IconSocialLink = ({ img, url }) => {
+  return (
+    <a href={url} className="ms-4">
+      <img src={img} alt={`Social icon`} />
+    </a>
+  );
+};
+
 export default function Footer() {
   return (
     <footer>
@@ -40,7 +49,7 @@ export default function Footer() {
       <div className="bg-primary py-5">
         <div className="container d-flex justify-content-around align-items-center flex-wrap">
           {infoBuyLinks.map((infoBuyLink, index) => (
-            <buyGoods
+            <BuyGoods
               key={index}
               img={infoBuyLink.img}
               text={infoBuyLink.text}
@@ -49,6 +58,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
+
       {/*//note  Hero --> FASCIA GRIGIA */}
       <section
         className="hero-footer bg-dark py-5 text-white overflow-hidden"
@@ -63,7 +73,7 @@ export default function Footer() {
           <div className="row">
             {/* Colonne Link */}
             {heroSections.map((heroSection, index) => (
-              <heroLinkColumn
+              <HeroLinkColumn
                 key={index}
                 title={heroSection.title}
                 texts={heroSection.texts}
@@ -72,6 +82,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
+
       {/*//todo  PIè DI PAGINA --> SOCIAL*/}
       <section className="bg-dark py-4 border-top border-secondary">
         <div className="container d-flex justify-content-between align-items-center">
@@ -86,9 +97,11 @@ export default function Footer() {
               Follow Us
             </span>
             {socialLinks.map((socialLink, index) => (
-              <a key={index} href={socialLink.url} className="ms-4">
-                <img src={socialLink.img} alt={`Social ${index}`} />
-              </a>
+              <IconSocialLink
+                key={index}
+                img={socialLink.img}
+                url={socialLink.url}
+              />
             ))}
           </div>
         </div>
