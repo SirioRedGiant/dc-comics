@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Header from "./components/HeaderComponent";
+import Main from "./components/MainComponent";
+import Footer from "./components/FooterComponent";
 import headLogoImg from "./assets/img/dc-logo.png";
 import jumbotronImg from "./assets/img/jumbotron.jpg";
 
