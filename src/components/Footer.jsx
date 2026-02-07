@@ -1,130 +1,34 @@
-import digitalComicsIcon from "../assets/img/buy-comics-digital-comics.png";
-import merchandiseIcon from "../assets/img/buy-comics-merchandise.png";
-import subscriptionIcon from "../assets/img/buy-comics-subscriptions.png";
-import comicShopLocator from "../assets/img/buy-comics-shop-locator.png";
-import dcPowerVisa from "../assets/img/buy-dc-power-visa.svg";
 //note background images
 import footerHeroBackground from "../assets/img/footer-bg.jpg";
 import dcLogoBackground from "../assets/img/dc-logo-bg.png";
-// ICONE FOOTER --> FOLOOW US
-import facebookLink from "../assets/img/footer-facebook.png";
-import twitterLink from "../assets/img/footer-twitter.png";
-import youtubeLink from "../assets/img/footer-youtube.png";
-import pinterestLink from "../assets/img/footer-pinterest.png";
-import periscopeLink from "../assets/img/footer-periscope.png";
+
+import { infoBuyLinks, heroSections, socialLinks } from "../data/footerlinks";
+
+const buyGoods = ({ img, text, url }) => {
+  return (
+    <a
+      href={url}
+      className="text-white text-decoration-none d-flex align-items-center"
+    >
+      <img src={img} alt={text} style={{ height: "50px" }} />
+      <span className="ms-2 fw-bold ">{text}</span>
+    </a>
+  );
+};
 
 export default function Footer() {
-  //? DATI --> fascia blu
-  const infoBuyLinks = [
-    {
-      img: digitalComicsIcon,
-      text: "DIGITAL COMICS",
-      url: "#",
-    },
-    {
-      img: merchandiseIcon,
-      text: "DC MERCHANDISE",
-      url: "#",
-    },
-    {
-      img: subscriptionIcon,
-      text: "SUBSCRIPTION",
-      url: "#",
-    },
-    {
-      img: comicShopLocator,
-      text: "COMIC SHOP LOCATOR",
-      url: "#",
-    },
-    {
-      img: dcPowerVisa,
-      text: "DC POWER VISA",
-      url: "#",
-    },
-  ];
-
-  //note HERO fascia con gli eroi
-  const heroSections = [
-    {
-      title: "DC COMICS",
-      texts: [
-        "Characters",
-        "comics",
-        "Movies",
-        "TV",
-        "Games",
-        "Videos",
-        "News",
-      ],
-    },
-    {
-      title: "SHOP",
-      texts: ["Shop DC", "Shop DC Collectibles"],
-    },
-    {
-      title: "DC",
-      texts: [
-        "Term Of Use",
-        "Privacy policy (New)",
-        "Ad choices",
-        "Advertising",
-        "Jobs",
-        "Subscriptions",
-        "Talent Workshops",
-        "CPSC Certificates",
-        "Ratings",
-        "Shop Help",
-        "Contact Us",
-      ],
-    },
-    {
-      title: "SITES",
-      texts: ["DC", "MAD Magazine", "DC Kids", "DC Universe", "DC Per Visa"],
-    },
-  ];
-
-  //* DATI piè pagina social
-  const socialLinks = [
-    {
-      img: facebookLink,
-      url: "#",
-    },
-    {
-      img: twitterLink,
-      url: "#",
-    },
-    {
-      img: youtubeLink,
-      url: "#",
-    },
-    {
-      img: pinterestLink,
-      url: "#",
-    },
-    {
-      img: periscopeLink,
-      url: "#",
-    },
-  ];
-
   return (
     <footer>
-      {/*//? FASCIA BLU */}
+      {/*//? FASCIA BLU RIFATTORIZZATA*/}
       <div className="bg-primary py-5">
         <div className="container d-flex justify-content-around align-items-center flex-wrap">
           {infoBuyLinks.map((infoBuyLink, index) => (
-            <a
+            <buyGoods
               key={index}
-              href={infoBuyLink.url}
-              className="text-white text-decoration-none d-flex align-items-center"
-            >
-              <img
-                src={infoBuyLink.img}
-                alt={infoBuyLink.text}
-                style={{ height: "50px" }}
-              />
-              <span className="ms-2 fw-bold ">{infoBuyLink.text}</span>
-            </a>
+              img={infoBuyLink.img}
+              text={infoBuyLink.text}
+              url={infoBuyLink.url}
+            />
           ))}
         </div>
       </div>
